@@ -40,3 +40,8 @@ class InstructorRegister(forms.Form):
 
 class CourseAdd(forms.Form):
 	title = forms.CharField()
+
+class SubmitSessionReport(forms.Form):
+	session_date = forms.CharField()
+	description = forms.CharField()
+	prescription = forms.FileField()

@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% block meta %}
+<meta charset="UTF-8">
+<meta content='width=device-width, initial-scale=1.0, user-scalable=0' name='viewport'>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta name="description" content="{{ store.meta_description }}">
+<meta content="PicoSite" name="author">
+<meta name="keywords" content="{{store.meta_keywords}}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{store.get_canonical}}">
+
+<!-- Open Graph tags -->
+<meta property="og:title" content="{{store.meta_og_title}}">
+<meta property="og:description" content="{{meta_og_description}}">
+<meta property="og:image" content="{{store.get_logo_image}}" rel="shortcut icon" type="image/x-icon">
+<meta property="og:url" content="{{store.get_canonical}}">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card tags -->
+<meta name="twitter:card" content="Summary Card with Large Image">
+<meta name="twitter:title" content="{{store.meta_tc_title}}">
+<meta name="twitter:description" content="{{store.meta_tc_description}}">
+<meta name="twitter:image" content="{{store.get_logo_image}}">
+{% endblock %}
+
+{% block title %}مشترکین{% endblock %}
+{% block content %}
+
+
+            <div class="page-header">
+                <h1 class="page-title">ثبت گزارش جدید</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" action="">
+                        <div class="form-row">
+                            <div class="col-12 mb-0">
+                                <label class="form-label">تاریخ تولد</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                    </div>
+                                    <input type="text" name="birthday" class="form-control" placeholder="YYYY/MM/DD" id="flatpickr-date2">
+                                </div>
+                            </div>
+                            <div class="form-group col-12 mb-0">
+                                <div class="form-group">
+                                    <label class="form-label text-start">توضیحات</label>
+                                    <textarea name="description" class="form-control" placeholder="جای متن"
+                                                            rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group col-12 mb-0 mt-2">
+                                <label class="form-label text-start" for="formFileMultiple">پیوست‌ها</label>
+                                <input class="form-control" name="atachments" id="formFileMultiple" multiple type="file">
+                            </div>                        
+                        </div> 
+                    </form>               
+            
+                    <div class="form-footer mt-2">
+                        <button type="submit" class="btn btn-primary">افزودن بیمار جدید</button>
+                        <p class="text-danger">{{message}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-header">
+                <h1 class="page-title">سوابق مراجعات</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-nowrap border-bottom"
+                                id="responsive-datatable">
+                            <thead>
+                            <tr class="border-top">
+                                <th>تاریخ مراجعه</th>
+                                <th>شرح گزارش</th>
+                                <th>مشاهده پیوست‌ها</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for customer in customers %}
+                                    <tr>
+                                        
+                                        <td class="align-middle">{{customer.birthday}}</td>
+                                        <td class="align-middle">{{customer.national_code}}</td>
+                                        <td class="align-middle" class="align-middle">
+                                            <button class="btn btn-success modal-effect text-white"
+                                            data-bs-effect="effect-scale" data-bs-toggle="modal" href="#customer{{customer.id}}">ثبت مراجعه</button>
+                                            
+                                            
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                  
+
+{% for customer in customers %}
+<div class="modal fade" id="customer{{customer.id}}">
+    <div class="modal-dialog modal-dialog-centered text-center" role="document">
+        <div class="modal-content modal-content-demo">
+            <div class="modal-header">
+                <h6 class="modal-title">ثبت جزئیات مراجعه</h6>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"><span
+                        aria-hidden="true ">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="">
+                    <div class="form-row">
+                        <div class="col-12 mb-0">
+                            <label class="form-label">تاریخ تولد</label>
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+                                </div>
+                                <input type="text" name="birthday" class="form-control" placeholder="YYYY/MM/DD" id="flatpickr-date2">
+                            </div>
+                        </div>
+                        <div class="form-group col-12 mb-0">
+                            <div class="form-group">
+                                <label class="form-label text-start">توضیحات</label>
+                                <textarea name="description" class="form-control mb-4" placeholder="جای متن"
+                                                        rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-12 mb-0">
+                            <label class="form-label text-start" for="formFileMultiple">پیوست‌ها</label>
+                            <input class="form-control" name="atachments" id="formFileMultiple" multiple type="file">
+                        </div>                        
+                    </div> 
+                </form>               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" data-bs-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'assets/js/forms-pickers.js' %}"></script>
+{% endblock %}

@@ -12,6 +12,7 @@ urlpatterns = [
     
     path('', views.CustomerRegister.as_view(), name='index'),
     path('course-register/', views.CourseRegisterView.as_view(), name='course_register'),
+    path('submit-report/<int:customer_id>/<str:customer_name>/', views.SubmitSessionReportView.as_view(), name='submit_report'),
     path('delete-customer/<int:customer_id>/', views.DeleteCustomerView.as_view(), name='delete_customer'),
     path('finance/instructor/<int:instructor_id>/', views.InstructorFinanceView.as_view(), name='instructor_finance'),
     path('payments/', views.SubmitPaymentsView.as_view(), name='payments'),

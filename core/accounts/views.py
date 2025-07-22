@@ -26,7 +26,7 @@ class CustomLoginView(View):
                 messages.error(request, 'Phone number or password is incorrect.')
                 message = 'نام کاربری یا رمز عبور نامعتبر'
 
-        return render(request, self.template_name, {'form': form, 'message':message})
+        return render(request, self.template_name, {'form': form, 'message':'اطلاعات ورودی نامعتبر'})
 
 
 class LogoutView(View):

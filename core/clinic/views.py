@@ -21,7 +21,6 @@ class CustomerRegister(LoginRequiredMixin, View):
 			full_name = name + " " + family_name
 			phone_number = form.cleaned_data['phone_number']
 			birthday = form.cleaned_data['birthday']
-			birth_day = birthday[:-10]
 			national_code = form.cleaned_data['national_code']
 			ensurance = form.cleaned_data['ensurance']
 			
@@ -29,7 +28,7 @@ class CustomerRegister(LoginRequiredMixin, View):
 				new_customer = Customer.objects.create(
 					full_name = full_name,
 					phone_number = phone_number,
-					birthday = birth_day,
+					birthday = birthday,
 					national_code = national_code, 
 					ensurance = ensurance
 				)
@@ -40,6 +39,16 @@ class CustomerRegister(LoginRequiredMixin, View):
 		customers = Customer.objects.all()
 		return render(request, self.template_name, {'form': form, 'message':'اطلاعات به صورت ناقص وارد شده است.', 'customers':customers})
 	
+class SubmitSessionReportView(View):
+
+	template_name = 'clinic/submit_session_report.html'
+
+	def get(self, request, customer_id, customer_name):
+
+		form = SubmitSessionReport
+		customer = Customer.objects.get(id=customer_id)
+		return render(request, self.template_name, {'form':form, 'customer':customer, 'customers':Customer.objects.all()})
+
 class CourseRegisterView(LoginRequiredMixin, View):
 
 	template_name = f'clinic/course_register.html'

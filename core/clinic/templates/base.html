@@ -1,265 +1,249 @@
+
 {% load static %}
-{% load humanize %}
-<!doctype html>
-<html dir="rtl" lang="fa-IR" style="--primary-rgb:195,60,152;">
-<head>
-    {% block meta %}
+<!DOCTYPE html>
+<html lang="fa" class="light-style layout-menu-fixed" dir="rtl" data-theme="theme-default" data-assets-path="../../assets/" data-template="horizontal-menu-template-no-customizer-starter">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-    {% endblock %}
-    <link href="{{ store.get_logo_image }}" rel="shortcut icon" type="image/x-icon"/>
-    <title>{% block title %}Sticky Sidebars{% endblock %}</title>
-    <link href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}" id="style" rel="stylesheet"/>
-    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet"/>
-    <link href="{% static 'assets/css/plugins.css' %}" rel="stylesheet"/>
-    <link href="{% static 'assets/css/transparent-style.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/css/skin-modes.css' %}" rel="stylesheet"/>
-    <link href="{% static 'assets/css/icons.css' %}" rel="stylesheet"/>
-    <link href="{% static 'assets/plugins/persian-date-picker/babakhani/persian-datepicker.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/switcher/css/switcher.css' %}" rel="stylesheet"/>
-    <link href="{% static 'assets/switcher/demo.css' %}" rel="stylesheet"/>
-    <link href="{% static 'assets/fonts/styles-fa-num/iran-yekan.css' %}" id="fonts" rel="stylesheet">
-    <link href="{% static 'assets/css/rtl.css' %}" rel="stylesheet"/>
-</head>
+    <title>صفحه 1 - کیت شروع | فرست - قالب مدیریت بوت‌استرپ</title>
 
-<body class='app rtl light-mode horizontal scrollable-layout color-menu'>
+    <meta name="description" content="">
 
-<!-- PAGE -->
-<div class="page">
-    <div class="page-main">
-        <div class="main-content app-content">
-            <div class="side-app ">
-                <!-- app-Header -->
-                <div class="header sticky hor-header" style="margin-bottom: -74px;">
-                    <div class='container-fluid main-container'>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}">
+    <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" /> -->
+    <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" /> -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/core.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/theme-default.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/flag-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/core.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/theme-default.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/typeahead-js/typeahead.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/flatpickr/flatpickr.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/rtl/rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/typeahead-js/typeahead.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/flatpickr/flatpickr.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/jquery-timepicker/jquery-timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/pickr/pickr-themes.css' %}">
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+      <div class="layout-container">
+        <!-- Navbar -->
+
+        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+          <div class="container-xxl">
+            <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
+              <a href="index.html" class="app-brand-link gap-2">
+                <span class="app-brand-logo demo">
+                  <svg width="26px" height="26px" viewbox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>آیکن</title>
+                    <defs>
+                      <lineargradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+                        <stop stop-color="#5A8DEE" offset="0%"></stop>
+                        <stop stop-color="#699AF9" offset="100%"></stop>
+                      </lineargradient>
+                      <lineargradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+                        <stop stop-color="#FDAC41" offset="0%"></stop>
+                        <stop stop-color="#E38100" offset="100%"></stop>
+                      </lineargradient>
+                    </defs>
+                    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Login---V2" transform="translate(-667.000000, -290.000000)">
+                        <g id="Login" transform="translate(519.000000, 244.000000)">
+                          <g id="Logo" transform="translate(148.000000, 42.000000)">
+                            <g id="icon" transform="translate(0.000000, 4.000000)">
+                              <path d="M13.8863636,4.72727273 C18.9447899,4.72727273 23.0454545,8.82793741 23.0454545,13.8863636 C23.0454545,18.9447899 18.9447899,23.0454545 13.8863636,23.0454545 C8.82793741,23.0454545 4.72727273,18.9447899 4.72727273,13.8863636 C4.72727273,13.5423509 4.74623858,13.2027679 4.78318172,12.8686032 L8.54810407,12.8689442 C8.48567157,13.19852 8.45300462,13.5386269 8.45300462,13.8863636 C8.45300462,16.887125 10.8856023,19.3197227 13.8863636,19.3197227 C16.887125,19.3197227 19.3197227,16.887125 19.3197227,13.8863636 C19.3197227,10.8856023 16.887125,8.45300462 13.8863636,8.45300462 C13.5386269,8.45300462 13.19852,8.48567157 12.8689442,8.54810407 L12.8686032,4.78318172 C13.2027679,4.74623858 13.5423509,4.72727273 13.8863636,4.72727273 Z" id="Combined-Shape" fill="#4880EA"></path>
+                              <path d="M13.5909091,1.77272727 C20.4442608,1.77272727 26,7.19618701 26,13.8863636 C26,20.5765403 20.4442608,26 13.5909091,26 C6.73755742,26 1.18181818,20.5765403 1.18181818,13.8863636 C1.18181818,13.540626 1.19665566,13.1982714 1.22574292,12.8598734 L6.30410592,12.859962 C6.25499466,13.1951893 6.22958398,13.5378796 6.22958398,13.8863636 C6.22958398,17.8551125 9.52536149,21.0724191 13.5909091,21.0724191 C17.6564567,21.0724191 20.9522342,17.8551125 20.9522342,13.8863636 C20.9522342,9.91761479 17.6564567,6.70030817 13.5909091,6.70030817 C13.2336969,6.70030817 12.8824272,6.72514561 12.5388136,6.77314791 L12.5392575,1.81561642 C12.8859498,1.78721495 13.2366963,1.77272727 13.5909091,1.77272727 Z" id="Combined-Shape2" fill="url(#linearGradient-1)"></path>
+                              <rect id="Rectangle" fill="url(#linearGradient-2)" x="0" y="0" width="7.68181818" height="7.68181818"></rect>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+                <span class="app-brand-text demo menu-text fw-bold">فرست</span>
+              </a>
+
+              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                <i class="bx bx-x bx-sm align-middle"></i>
+              </a>
+            </div>
+
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav align-items-center">
+              <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
+                <i class="bx bx-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="{% static 'assets/img/avatars/1.png' %}" alt class="rounded-circle">
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
                         <div class="d-flex">
-                            <a class="light-logo-3 " href="{% url 'clinic:index' %}">
-                                <img alt="logo" class="header-brand-img desktop-logo" src="{% static 'assets\images\logo.jpg' %}" height="65px">
-                                <img alt="logo" class="header-brand-img light-logo1" src="{% static 'assets\images\logo.jpg' %}" height="65px"></a>
-                            <!-- sidebar-toggle-->
-                        
-                            <!-- LOGO -->
-                            
-                            <div class="d-flex order-lg-2 ms-auto header-right-icons">
-                                
-                                
-
-                                
-                                <div class="dropdown  d-flex notifications">
-                                    <a class="nav-link icon" href="{% url 'admin:index' %}"><i
-                                        class="fe fe-home"></i>
-                                    </a>             
-                                </div> 
-
-
-                                {% if request.user.is_authenticated %}
-                                <div class="dropdown  d-flex notifications">
-                                    <a class="btn btn-primary " href="{% url 'accounts:logout' %}">خروج
-                                    </a>             
-                                </div> 
-                                {% endif %}
-                               
-                                <button class="nav-link icon navbar-toggler navresponsive-toggler d-lg-none ms-auto" data-bs-toggle="sidebar-right"
-                                data-target=".sidebar-right" href="javascript:void(0);" aria-controls="navbarSupportedContent-4" aria-expanded="false"
-                                        aria-label="Toggle navigation"
-                                        data-bs-target="#navbarSupportedContent-4" data-bs-toggle="collapse"
-                                        type="button">
-                                    <span class="navbar-toggler-icon fe fe-align-left"></span>
-                                </button>                        
-                                
-                                <div class="navbar navbar-collapse responsive-navbar p-0">
-                                    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-                                        <div class="d-flex order-lg-2">
-                                                                              
-                                                     
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="demo-icon nav-link icon">
-                                    <i class="fe fe-settings fa-spin  text_primary"></i>
-                                </div> -->
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="../../assets/img/avatars/1.png" alt class="rounded-circle">
                             </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">جان اسنو</span>
+                            <small>مدیر</small>
+                          </div>
                         </div>
-                    </div>
-                </div>
-                <!-- /app-Header -->
-
-                <!--APP-SIDEBAR-->
-                <div class="sticky">
-                    <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
-                    <div class="app-sidebar">
-                        
-                        <div class="main-sidemenu">
-                            
-                            <ul class="side-menu">
-                                
-                                <li>
-                                    <a class="side-menu__item has-link" href="{% url 'clinic:index' %}"><i
-                                            class="side-menu__icon fe fe-user"></i><span
-                                            class="side-menu__label">مشترکین</span></a>
-                                </li>
-                                <li>
-                                    <a class="side-menu__item has-link" href="{% url 'clinic:course_register' %}"><i
-                                            class="side-menu__icon fe fe-clinicping-bag"></i><span
-                                            class="side-menu__label">ثبت‌نام دوره</span></a>
-                                </li>
-                                <li>
-                                    <a class="side-menu__item has-link" href="{% url 'clinic:instructor_finance' 0 %}"><i
-                                            class="side-menu__icon fe fe-check"></i><span
-                                            class="side-menu__label">عملکرد مربیان</span></a>
-                                </li>
-                                <li>
-                                    <a class="side-menu__item has-link" href="{% url 'clinic:payments' %}"><i
-                                            class="side-menu__icon fe fe-dollar-sign"></i><span
-                                            class="side-menu__label">پرداختی‌ها</span></a>
-                                </li>
-                                <li>
-                                    <a class="side-menu__item has-link" href="{% url 'clinic:instructors' %}"><i
-                                            class="side-menu__icon fe fe-user"></i><span
-                                            class="side-menu__label">مربیان</span></a>
-                                </li>
-                                <li>
-                                    <a class="side-menu__item has-link" href="{% url 'clinic:courses' %}"><i
-                                            class="side-menu__icon fe fe-calendar"></i><span
-                                            class="side-menu__label">دوره‌ها</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--/APP-SIDEBAR-->
-                </div>
-        
-                {% block content %}{% endblock %}
-
-                
-        
-                <div class="main-container container-fluid ">
-                    <div class="row mt-15">
-                        <div class="col-md-12 ">
-                            <div class="card mt-20 bg-primary-transparent card-transparent">   
-                                <div class="card-body mt-2">
-                                    
-                                    <footer class="main-footer px-0 pb-0 bg-primary-transparent card-transparent">
-                                        <div class="row">
-                                            <!-- <div class="col-md-12 social text-center">
-                                                <ul class="text-center d-inline-block">
-                                                    <li>
-                                                        <a class="social-icon" href="https://www.facebook.com/"
-                                                        target="_blank"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="social-icon" href="https://twitter.com/"
-                                                        target="_blank"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="social-icon" href="javascript:void(0)"><i
-                                                                class="fa fa-rss"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="social-icon" href="https://www.youtube.com/"
-                                                        target="_blank"><i class="fa fa-youtube"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="social-icon" href="https://www.linkedin.com/"
-                                                        target="_blank"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="social-icon" href="https://myaccount.google.com/"
-                                                        target="_blank"><i class="fa fa-google-plus"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div> -->
-                                            <div class="col-lg-12 col-sm-12 mt-3 mt-lg-0 text-center mb-4">
-                                                حق نشر © 1403 <a href="javascript:void(0)"></a>. طراحی شده با <span
-                                                    class="fa fa-heart text-danger"></span> توسط <a
-                                                    href="https://picosite.ir"> پیکوسایت </a>
-                                                کلیه حقوق محفوظ است.
-                                            </div>
-                                        </div>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">پروفایل من</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle">تنظیمات</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="d-flex align-items-center align-middle">
+                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                          <span class="flex-grow-1 align-middle">صورتحساب</span>
+                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle">خروج</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
             </div>
-        </div>
-        <!-- Sidebar-right -->
-        <div class="sidebar sidebar-right sidebar-animate bg-primary">
-            <div class="panel panel-primary card mb-0 shadow-none border-0">
-                <div class="tab-menu-heading border-0 bg-success d-flex p-3">
-                    <div class="card-title mb-0"><i class="fe fe-bell me-2"></i><span
-                            class=" pulse"></span>خوش آمدید
-                    </div>
-                    <div class="card-options ms-auto">
-                        <a class="sidebar-icon text-end float-end me-3 mb-1" data-bs-toggle="sidebar-right"
-                        data-target=".sidebar-right" href="javascript:void(0);"><i
-                                class="fe fe-x text-white"></i></a>
-                    </div>
-                </div>
-                <div class="panel-body tabs-menu-body latest-tasks p-0 border-0 bg-primary">
-                    
-                    <div class="main-sidemenu">
-                        
-                        <ul class="side-menu">
-                            
-                            
-                            <li>
-                                <a class="side-menu__item has-link" href="{% url 'clinic:index' %}"><i
-                                        class="side-menu__icon fe fe-user"></i><span
-                                        class="side-menu__label">مشترکین</span></a>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{% url 'clinic:course_register' %}"><i
-                                        class="side-menu__icon fe fe-clinicping-bag"></i><span
-                                        class="side-menu__label">ثبت‌نام دوره</span></a>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{% url 'clinic:instructor_finance' 0 %}"><i
-                                        class="side-menu__icon fe fe-check"></i><span
-                                        class="side-menu__label">عملکرد مربیان</span></a>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{% url 'clinic:payments' %}"><i
-                                        class="side-menu__icon fe fe-dollar-sign"></i><span
-                                        class="side-menu__label">پرداختی‌ها</span></a>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{% url 'clinic:instructors' %}"><i
-                                        class="side-menu__icon fe fe-user"></i><span
-                                        class="side-menu__label">مربیان</span></a>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{% url 'clinic:courses' %}"><i
-                                        class="side-menu__icon fe fe-calendar"></i><span
-                                        class="side-menu__label">دوره‌ها</span></a>
-                            </li>
-                            
-                            
-                        </ul>
-                        
-                    </div>
-                </div>
+          </div>
+        </nav>
+
+        <!-- / Navbar -->
+
+        <div class="layout-page">
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Menu -->
+            <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+              <div class="container-xxl d-flex h-100">
+                <ul class="menu-inner">
+                  <!-- Page -->
+                  <li class="menu-item active">
+                    <a href="index.html" class="menu-link">
+                      <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                      <div data-i18n="Page 1">صفحه 1</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="page-2.html" class="menu-link">
+                      <i class="menu-icon tf-icons bx bx-detail"></i>
+                      <div data-i18n="Page 2">صفحه 2</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+            <div class="container-xxl flex-grow-1 container-p-y">
+                {% block content %}
+
+                {% endblock %}
             </div>
+          </div>
         </div>
-        <!--/Sidebar-right-->
+
+        <!--/ Layout container -->
+      </div>
     </div>
-</div>
 
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-<script src="{% static 'assets/js/sticky.js' %}"></script>
-<script src="{% static 'assets/plugins/sidemenu/sidemenu.js' %}"></script>
-<script src="{% static 'assets/plugins/sidebar/sidebar.js' %}"></script>
-<script src="{% static 'assets/js/custom-swicher.js' %}"></script>
-<script src="{% static 'assets/js/themeColors.js' %}"></script>
-<script src="{% static 'assets/js/widget.js' %}"></script>
-<script src="{% static 'assets/plugins/bootstrap/js/popper.min.js' %}"></script>
-<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/js/custom.js' %}"></script>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
 
-
-{% block js %}{% endblock %}
-
-</body>
+    <div class="drag-target"></div>
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/hammer/hammer.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/dataTables.bootstrap5.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/buttons.bootstrap5.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/jszip.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/pdfmake/pdfmake.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/pdfmake/vfs_fonts.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/js/buttons.colVis.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/datatable/responsive.bootstrap5.min.js' %}"></script>
+    <script src="{% static 'assets/js/table-data.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/hammer/hammer.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/i18n/i18n.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/typeahead-js/typeahead.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/moment/moment.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/jdate/jdate.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/flatpickr/flatpickr-jdate.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/flatpickr/l10n/fa-jdate.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/jquery-timepicker/jquery-timepicker.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/pickr/pickr.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/forms-pickers.js' %}"></script>
+    
+  </body>
 </html>
