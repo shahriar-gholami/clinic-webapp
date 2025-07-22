@@ -1,0 +1,16 @@
+Khayyam
+django==4.2.8
+django-decouple==2.1
+filelock
+markdown
+pillow
+django-storages
+boto3
+python-dotenv
+django-filter
+django-jsonfield  
+requests
+markdown       
+django-filter  
+django-cors-headers
+django-debug-toolbar
