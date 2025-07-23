@@ -11,15 +11,7 @@ app_name = f"{current_app_name}"
 urlpatterns = [
     
     path('', views.CustomerRegister.as_view(), name='index'),
-    path('course-register/', views.CourseRegisterView.as_view(), name='course_register'),
     path('submit-report/<int:customer_id>/<str:customer_name>/', views.SubmitSessionReportView.as_view(), name='submit_report'),
+    path('sessions/', views.SessionsView.as_view(), name='sessions'),
     path('delete-customer/<int:customer_id>/', views.DeleteCustomerView.as_view(), name='delete_customer'),
-    path('finance/instructor/<int:instructor_id>/', views.InstructorFinanceView.as_view(), name='instructor_finance'),
-    path('payments/', views.SubmitPaymentsView.as_view(), name='payments'),
-    path('instructor-dept-pay/', views.ConfirmInstructorPaymentView.as_view(), name='instructor_dept_pay'),
-    path('submit-gym-costs/', views.SubmitGymCostsView.as_view(), name='submit_gym_costs'),
-    path('instructors/', views.InstructorsView.as_view(), name='instructors'),
-    path('delete-instructor/<int:instructor_id>/', views.DeleteInstructorView.as_view(), name='delete_instructor'),
-    path('courses/', views.CoursesView.as_view(), name='courses'),
-    path('delete-course/<int:course_id>/', views.DeleteCourseView.as_view(), name='delete_course'),
    ]

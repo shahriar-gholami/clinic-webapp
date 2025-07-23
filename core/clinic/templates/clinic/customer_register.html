@@ -26,15 +26,17 @@
 {% endblock %}
 
 {% block title %}مشترکین{% endblock %}
+
+
 {% block content %}
 
 
-            <div class="page-header">
-                <h1 class="page-title">ثبت‌نام بیمار</h1>
-            </div>
+            
 
             <div class="card">
-                <div class="card-body">
+                <div class="card-header header-elements">
+                      <span class="me-2">ایجاد پرونده جدید</span>
+                <div class="card-body px-0">
                 <form id="customerForm" method="post" action="{% url 'clinic:index' %}">
                     {% csrf_token %}
                     
@@ -79,10 +81,14 @@
                 </form>
                 </div>
             </div>
-            <div class="page-header">
-                <h1 class="page-title">لیست بیماران</h1>
             </div>
-            <div class="card">
+            
+            <div class="card mt-5">
+                <div class="card-header header-elements">
+                      <span class="me-2">لیست بیماران</span>
+
+                      
+                    </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered text-nowrap border-bottom"
@@ -94,7 +100,7 @@
                                 <th>تاریخ تولد</th>
                                 <th>کد ملی</th>
                                 <th>بیمه</th>
-                                <th>مجموع پرداختی</th>
+                                <th>آخرین مراجعه</th>
                                 <th>عملیات</th>
 
 
@@ -110,13 +116,11 @@
                                         <td class="align-middle">{{customer.phone_number}}</td>
                                         <td class="align-middle">{{customer.birthday}}</td>
                                         <td class="align-middle">{{customer.national_code}}</td>
-                                        <td class="align-middle">{% if customer.ensurance == True %}دارد{% else %}ندارد{% endif %}</td>
-                                        <td class="align-middle">{{customer.get_total_payments|intcomma}} تومان</td>
+                                        <td class="align-middle">{{customer.ensurance}}</td>
+                                        <td class="align-middle">{{customer.get_last_session_date}}</td>
                                         <td class="align-middle" class="align-middle">
-                                            <a class="btn btn-success text-white" href="{% url 'clinic:submit_report' customer.id customer.full_name %}">ثبت مراجعه</a>
+                                            <a class="btn btn-success text-white" href="{% url 'clinic:submit_report' customer.id customer.full_name %}">مشاهده و بروزرسانی پرونده</a>
                                             
-                                            <button class="btn btn-success modal-effect text-white"
-                                            data-bs-effect="effect-scale" data-bs-toggle="modal" href="#customer{{customer.id}}">تاریخچه مراجعات</button>
                                             
                                             <a href="{% url 'clinic:delete_customer' customer.id %}" class="btn btn-icon btn-danger">
                                             <span class="tf-icons bx bx-trash"></span>

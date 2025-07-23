@@ -1,5 +1,6 @@
 
 from django import forms
+from . models import SessionReport
 
 class CustomerRegisterForm(forms.Form):
 
@@ -41,7 +42,9 @@ class InstructorRegister(forms.Form):
 class CourseAdd(forms.Form):
 	title = forms.CharField()
 
-class SubmitSessionReport(forms.Form):
+class SessionReportForm(forms.Form):
+	prescription_files = forms.FileField(required=False)
 	session_date = forms.CharField()
-	description = forms.CharField()
-	prescription = forms.FileField()
+	description = forms.CharField(required = False)
+	cost = forms.IntegerField()
+

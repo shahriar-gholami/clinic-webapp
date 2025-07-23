@@ -25,69 +25,14 @@
 <meta name="twitter:image" content="{{store.get_logo_image}}">
 {% endblock %}
 
-{% block title %}مشترکین{% endblock %}
+{% block title %}مراجعات{% endblock %}
 {% block content %}
 
 
-            
-   
-
-            <div class="card">
-                <div class="card-header header-elements">
-                      <span class="me-2">ثبت گزارش جدید</span>
-
-                      <div class="card-header-elements ms-auto">
-                        <a type="button" class="btn btn-s btn-primary" href="{% url 'clinic:index' %}">
-                          <span class=" bx-xs me-1"></span>بازگشت به صفحه بیماران
-                        </a>
-                      </div>
-                    </div>
-                <div class="card-body">
-                    <form method="post" action="" enctype="multipart/form-data">
-                    {% csrf_token %}
-                        <div class="row">
-                            <div class="col-12 col-md-6 mb-0">
-                                <label class="form-label">تاریخ تولد</label>
-                                <div class="input-group">
-                                    <div class="input-group-text">
-                                        <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
-                                    </div>
-                                    <input type="text" name="session_date" class="form-control" placeholder="YYYY/MM/DD" id="flatpickr-date">
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-6 mb-0">
-                                <label class="form-label">ویزیت دریافتی (تومان)</label>
-                                <input name="cost" class="form-control" placeholder="هزینه ویزیت"
-                                        type="number">
-                        </div>
-
-
-                            <div class="form-group col-12 mb-0">
-                                <div class="form-group">
-                                    <label class="form-label text-start">توضیحات</label>
-                                    <textarea name="description" class="form-control" placeholder="جای متن"
-                                                            rows="4"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group col-12 mb-0 mt-2">
-                                <label class="form-label text-start" for="formFileMultiple">پیوست‌ها</label>
-                                <input class="form-control" name="prescription_files" id="formFileMultiple" multiple type="file">
-                            </div>                        
-                        </div> 
-                                   
-            
-                    <div class="form-footer mt-2">
-                        <button type="submit" class="btn btn-primary">ثبت گزارش جدید</button>
-                        <p class="text-danger">{{message}}</p>
-                    </div>
-                </form>
-                </div>
-            </div>
-            
+        
             <div class="card mt-5">
                 <div class="card-header header-elements">
-                      <span class="me-2">سوابق مراجعات</span>
+                      <span class="me-2">لیست مراجعات</span>
 
                       
                     </div>
