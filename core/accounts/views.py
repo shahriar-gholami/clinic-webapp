@@ -21,7 +21,7 @@ class CustomLoginView(View):
 
             if user is not None:
                 login(request, user)
-                return redirect('clinic:course_register')  # به دلخواه تغییر بده
+                return redirect('clinic:index')  # به دلخواه تغییر بده
             else:
                 messages.error(request, 'Phone number or password is incorrect.')
                 message = 'نام کاربری یا رمز عبور نامعتبر'
