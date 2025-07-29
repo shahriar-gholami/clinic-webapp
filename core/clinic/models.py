@@ -11,7 +11,7 @@ class Customer(models.Model):
 	full_name = models.CharField(max_length=30)
 	create_date = models.DateTimeField(default=now)  # مقدار پیش‌فرض به‌جای auto_now_add
 	birthday = models.CharField(max_length=250, null=True, blank=True)
-	ensurance = models.CharField(max_length=255)
+	ensurance = models.CharField(max_length=255, null=True, blank=True)
 	national_code = models.CharField(max_length=250, unique=True, null=True, blank=True)
 	phone_number = models.CharField(max_length=250)
 
@@ -44,8 +44,8 @@ class Customer(models.Model):
 class SessionReport(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
 	session_date = models.CharField(max_length=255)
-	description = models.TextField()
-	cost = models.IntegerField(default=0)
+	description = models.TextField(null=True, blank=True)
+	cost = models.IntegerField(default=0, null=True, blank=True)
 
 	def get_attachments(self):
 		return PrescriptionFile.objects.filter(session_report = self)

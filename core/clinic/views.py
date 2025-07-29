@@ -56,7 +56,11 @@ class SubmitSessionReportView(View):
 		if form.is_valid():
 			session_date = form.cleaned_data['session_date']
 			cost = form.cleaned_data['cost']
+			if cost == None:
+				cost = 0
 			description = form.cleaned_data.get('description', '')
+			if description == None:
+				description = '-'
 			files = request.FILES.getlist('prescription_files')
 
 			# ایجاد آبجکت SessionReport به صورت دستی
@@ -71,7 +75,7 @@ class SubmitSessionReportView(View):
 				PrescriptionFile.objects.create(session_report=session_report, file=file)
 			return render(request, self.template_name, {'form': form, 'message':'گزارش مراجعه با موفقیت ثبت شد.', 'reports':reports})
 
-		return render(request, self.template_name, {'form': form, 'reports':reports})
+		return render(request, self.template_name, {'form': form, 'reports':reports, 'message':'اطلاعات مراجعه ناقص ثبت شده است'})
 	
 class SessionsView(View):
 	template_name = 'clinic/sessions.html'

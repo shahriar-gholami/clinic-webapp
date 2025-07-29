@@ -7,9 +7,9 @@ class CustomerRegisterForm(forms.Form):
 	name = forms.CharField()
 	family_name = forms.CharField()
 	phone_number = forms.CharField()
-	birthday = forms.CharField()
+	birthday = forms.CharField(required=False)
 	national_code = forms.CharField()
-	ensurance = forms.CharField()
+	ensurance = forms.CharField(required=False)
 
 class CourseRegisterForm(forms.Form):
 	title = forms.CharField()
@@ -46,5 +46,5 @@ class SessionReportForm(forms.Form):
 	prescription_files = forms.FileField(required=False)
 	session_date = forms.CharField()
 	description = forms.CharField(required = False)
-	cost = forms.IntegerField()
+	cost = forms.IntegerField(required=False)
 

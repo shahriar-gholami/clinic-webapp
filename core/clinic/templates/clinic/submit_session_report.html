@@ -47,7 +47,7 @@
                     {% csrf_token %}
                         <div class="row">
                             <div class="col-12 col-md-6 mb-0">
-                                <label class="form-label">تاریخ مراجعه</label>
+                                <label class="form-label">تاریخ مراجعه</label><span class="text-danger">*</span>
                                 <div class="input-group">
                                     <div class="input-group-text">
                                         <i class="fa fa-calendar tx-16 lh-0 op-6"></i>
@@ -111,8 +111,12 @@
                                         <td class="align-middle">{{report.cost|intcomma}} تومان</td>
                                         <td class="align-middle">{{report.description|safe}}</td>
                                         <td class="align-middle" class="align-middle">
+                                            {% if report.get_attachments %}
                                             <button class="btn btn-success modal-effect text-white"
                                             data-bs-effect="effect-scale" data-bs-toggle="modal" href="#report{{report.id}}">مشاهده فایل‌های پیوست</button>
+                                            {% else %}
+                                            <p>بدون پیوست</p>
+                                            {% endif %}
                                         </td>
                                     </tr>
                                 {% endfor %}
@@ -132,6 +136,9 @@
                 
             </div>
             <div class="modal-body">
+                
+                    
+                
                 <ul>
                 {% for attach in report.get_attachments %}
                 <li>
@@ -139,6 +146,7 @@
                 </li>
                 {% endfor %}
                 </ul>
+                
             </div>
             <div class="modal-footer">
                 <button class="btn btn-light" data-bs-dismiss="modal">بستن</button>
