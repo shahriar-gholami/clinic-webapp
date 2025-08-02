@@ -114,8 +114,13 @@
                                             {% if report.get_attachments %}
                                             <button class="btn btn-success modal-effect text-white"
                                             data-bs-effect="effect-scale" data-bs-toggle="modal" href="#report{{report.id}}">مشاهده فایل‌های پیوست</button>
+                                            <a href="{% url 'clinic:delete_session' report.id %}" class="btn btn-icon btn-danger">
+                                                <span class="tf-icons bx bx-trash"></span>
+                                            </a>
                                             {% else %}
-                                            <p>بدون پیوست</p>
+                                            <p>بدون پیوست <a href="{% url 'clinic:delete_session' report.id %}" class="btn btn-icon btn-danger">
+                                                <span class="tf-icons bx bx-trash"></span>
+                                            </a></p>
                                             {% endif %}
                                         </td>
                                     </tr>
@@ -138,14 +143,45 @@
             <div class="modal-body">
                 
                     
+                <div class="table-responsive">
+                    <table class="table table-bordered text-nowrap border-bottom"
+                            id="responsive-datatable">
+                        <thead>
+                        <tr class="border-top">
+                            <th>فایل پیوست</th>
+                            <th>حذف فایل</th>
+                   
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for attach in report.get_attachments %}
+                                <tr>
+                                    
+                                    <td class="align-middle">
+                                        {% if attach.file.name|lower|slice:"-4:" in '.jpg,.png,.jpeg,.gif' %}
+                                            <!-- نمایش پیش‌نمایش تصویر برای فایل‌های تصویری -->
+                                            <a href="{{ attach.file.url }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ attach.file.url }}" alt="Preview" style="max-width: 100px; max-height: 100px; object-fit: cover;">
+                                            </a>
+                                        {% else %}
+                                            <!-- نمایش نام فایل یا آیکون برای فایل‌های غیرتصویری -->
+                                            <a href="{{ attach.file.url }}" target="_blank" rel="noopener noreferrer">
+                                                <span>{{ attach.file.name }}</span>
+                                            </a>
+                                        {% endif %}
+                                    </td>
+                                    <td class="align-middle">
+                                        <a href="{% url 'clinic:delete_attach' report.id attach.id %}" class="btn btn-icon btn-danger">
+                                            <span class="tf-icons bx bx-trash"></span>
+                                        </a>
+                                    </td>
+                                    
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
                 
-                <ul>
-                {% for attach in report.get_attachments %}
-                <li>
-                    <a href="{{attach.file.url}}" target="_blank" rel="noopener noreferrer">مشاهده پیوست</a>
-                </li>
-                {% endfor %}
-                </ul>
                 
             </div>
             <div class="modal-footer">

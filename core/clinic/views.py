@@ -91,6 +91,20 @@ class DeleteCustomerView(LoginRequiredMixin, View):
 		customer.delete()
 		return redirect('clinic:index')
 	
+class DeleteSessionRecordView(LoginRequiredMixin, View):
+
+	def get(self, request, session_id):
+		session_record = SessionReport.objects.get(id = session_id)
+		session_record.delete()
+		return redirect('clinic:submit_report', session_record.customer.id, session_record.customer.full_name)
+
+class DeleteSessionAttachmentView(LoginRequiredMixin, View):
+
+	def get(self, request, session_id, file_id):
+		session = SessionReport.objects.get(id = session_id)
+		attach = PrescriptionFile.objects.get(id = file_id)
+		attach.delete()
+		return redirect('clinic:submit_report', session.customer.id, session.customer.full_name)
 
 
 
